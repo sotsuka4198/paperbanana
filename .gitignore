@@ -31,6 +31,7 @@ run_*/
 *.jpeg
 !data/reference_sets/**/*.png
 !data/reference_sets/**/*.jpg
+!assets/img/hero_image.png
 
 # Reference set build artifacts (large, copyrighted PDFs)
 data/reference_sets/output/

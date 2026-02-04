@@ -1,22 +1,23 @@
-<p align="center">
-  <img src="https://dwzhu-pku.github.io/PaperBanana/static/images/logo.jpg" alt="PaperBanana Logo" width="200"/>
-</p>
-
-<h1 align="center">PaperBanana</h1>
-
-<p align="center">
-  <strong>Automated Academic Illustration for AI Scientists</strong>
-</p>
-
-<p align="center">
-  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white" alt="Python 3.10+"/></a>
-  <a href="https://arxiv.org/abs/2601.23265"><img src="https://img.shields.io/badge/arXiv-2601.23265-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?logo=opensourceinitiative&logoColor=white" alt="License: MIT"/></a>
-  <br/>
-  <a href="https://pydantic.dev"><img src="https://img.shields.io/badge/Pydantic-v2-e92063?logo=pydantic&logoColor=white" alt="Pydantic v2"/></a>
-  <a href="https://typer.tiangolo.com"><img src="https://img.shields.io/badge/CLI-Typer-009688?logo=gnubash&logoColor=white" alt="Typer"/></a>
-  <a href="https://ai.google.dev/"><img src="https://img.shields.io/badge/Gemini-Free%20Tier-4285F4?logo=google&logoColor=white" alt="Gemini Free Tier"/></a>
-</p>
+<table align="center" width="100%" style="border: none; border-collapse: collapse;">
+  <tr>
+    <td width="220" align="left" valign="middle" style="border: none;">
+      <img src="https://dwzhu-pku.github.io/PaperBanana/static/images/logo.jpg" alt="PaperBanana Logo" width="180"/>
+    </td>
+    <td align="left" valign="middle" style="border: none;">
+      <h1>PaperBanana</h1>
+      <p><strong>Automated Academic Illustration for AI Scientists</strong></p>
+      <p>
+        <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white" alt="Python 3.10+"/></a>
+        <a href="https://arxiv.org/abs/2601.23265"><img src="https://img.shields.io/badge/arXiv-2601.23265-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"/></a>
+        <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?logo=opensourceinitiative&logoColor=white" alt="License: MIT"/></a>
+        <br/>
+        <a href="https://pydantic.dev"><img src="https://img.shields.io/badge/Pydantic-v2-e92063?logo=pydantic&logoColor=white" alt="Pydantic v2"/></a>
+        <a href="https://typer.tiangolo.com"><img src="https://img.shields.io/badge/CLI-Typer-009688?logo=gnubash&logoColor=white" alt="Typer"/></a>
+        <a href="https://ai.google.dev/"><img src="https://img.shields.io/badge/Gemini-Free%20Tier-4285F4?logo=google&logoColor=white" alt="Gemini Free Tier"/></a>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -27,6 +28,14 @@
 > The implementation is based on the publicly available paper and may differ from the original system.
 
 An agentic framework for generating publication-quality academic diagrams and statistical plots from text descriptions. Uses Google Gemini for both VLM and image generation.
+
+- Two-phase multi-agent pipeline with iterative refinement
+- Gemini-based VLM planning and image generation
+- CLI and Python API for diagrams and plots
+
+<p align="center">
+  <img src="assets/img/hero_image.png" alt="PaperBanana takes paper as input and provide diagram as output" style="max-width: 960px; width: 100%; height: auto;"/>
+</p>
 
 ---
 
