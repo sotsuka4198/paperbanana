@@ -25,7 +25,7 @@ class OpenRouterVLM(VLMProvider):
     def __init__(
         self,
         api_key: Optional[str] = None,
-        model: str = "google/gemini-2.0-flash-001",
+        model: str = "google/gemini-3-flash-preview",
     ):
         self._api_key = api_key
         self._model = model
