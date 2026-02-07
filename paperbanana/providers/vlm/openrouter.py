@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import re
 from typing import Optional
 
 import structlog
@@ -40,11 +39,11 @@ class OpenRouterVLM(VLMProvider):
         return self._model
 
     def _get_client(self):
-        """Lazy-init an httpx client pointed at the OpenRouter API."""
+        """Lazy-init an async httpx client pointed at the OpenRouter API."""
         if self._client is None:
             import httpx
 
-            self._client = httpx.Client(
+            self._client = httpx.AsyncClient(
                 base_url="https://openrouter.ai/api/v1",
                 headers={
                     "Authorization": f"Bearer {self._api_key}",
@@ -98,7 +97,7 @@ class OpenRouterVLM(VLMProvider):
         if response_format == "json":
             payload["response_format"] = {"type": "json_object"}
 
-        response = client.post("/chat/completions", json=payload)
+        response = await client.post("/chat/completions", json=payload)
         response.raise_for_status()
 
         data = response.json()
