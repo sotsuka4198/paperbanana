@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Literal, Optional
 
 import yaml
-from pydantic import Field
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings
+
+OutputFormat = Literal["png", "jpeg", "webp"]
 
 
 class VLMConfig(BaseSettings):
@@ -70,7 +72,7 @@ class Settings(BaseSettings):
 
     # Output settings
     output_dir: str = "outputs"
-    output_format: str = "png"
+    output_format: OutputFormat = "png"
     save_iterations: bool = True
 
     # API Keys (loaded from environment)
@@ -81,6 +83,17 @@ class Settings(BaseSettings):
     skip_ssl_verification: bool = Field(default=False, alias="SKIP_SSL_VERIFICATION")
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8", "extra": "ignore"}
+
+    @field_validator("output_format", mode="before")
+    @classmethod
+    def validate_output_format(cls, v: Any) -> str:
+        """Validate output_format is png, jpeg, or webp (case-insensitive)."""
+        if v is None:
+            return "png"
+        v = str(v).lower()
+        if v not in ("png", "jpeg", "webp"):
+            raise ValueError(f"output_format must be png, jpeg, or webp. Got: {v}")
+        return v
 
     @classmethod
     def from_yaml(cls, config_path: str | Path, **overrides: Any) -> Settings:
