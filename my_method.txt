@@ -1,1 +1,0 @@
-Our framework consists of an encoder that processes input sequences through multi-head self-attention layers, followed by a decoder that generates output tokens auto-regressively using cross-attention to the encoder representations. We add a novel routing mechanism that selects relevant encoder states for each decoder step.

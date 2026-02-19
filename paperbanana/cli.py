@@ -345,15 +345,15 @@ def plot(
         "-f",
         help="Output image format (png, jpeg, or webp)",
     ),
+    verbose: bool = typer.Option(
+        False, "--verbose", "-v", help="Show detailed agent progress and timing"
+    ),
 ):
     """Generate a statistical plot from data."""
     if format not in ("png", "jpeg", "webp"):
         console.print(f"[red]Error: Format must be png, jpeg, or webp. Got: {format}[/red]")
         raise typer.Exit(1)
 
-    verbose: bool = (
-        typer.Option(False, "--verbose", "-v", help="Show detailed agent progress and timing"),
-    )
     configure_logging(verbose=verbose)
     data_path = Path(data)
     if not data_path.exists():
