@@ -86,6 +86,10 @@ class Settings(BaseSettings):
     openai_vlm_model: Optional[str] = Field(default=None, alias="OPENAI_VLM_MODEL")
     openai_image_model: Optional[str] = Field(default=None, alias="OPENAI_IMAGE_MODEL")
 
+    # LM Studio
+    lm_studio_base_url: str = Field(default="http://localhost:1234/v1", alias="LM_STUDIO_BASE_URL")
+    lm_studio_api_key: Optional[str] = Field(default=None, alias="LM_STUDIO_API_KEY")
+
     @property
     def effective_vlm_model(self) -> str:
         """Return the VLM model for the active provider."""

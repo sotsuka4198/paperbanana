@@ -77,9 +77,17 @@ class ProviderRegistry:
                 model=settings.openai_vlm_model or settings.vlm_model,
                 base_url=settings.openai_base_url,
             )
+        elif provider == "lm_studio":
+            from paperbanana.providers.vlm.lm_studio import LMStudioVLM
+
+            return LMStudioVLM(
+                base_url=settings.lm_studio_base_url,
+                model=settings.vlm_model,
+                api_key=settings.lm_studio_api_key,
+            )
         else:
             raise ValueError(
-                f"Unknown VLM provider: {provider}. Available: gemini, openrouter, openai"
+                f"Unknown VLM provider: {provider}. Available: gemini, openrouter, openai, lm_studio"
             )
 
     @staticmethod
